@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/WeatherInsidePage.dart';
 
 class Weather extends StatelessWidget {
   final String stationName;
@@ -57,7 +58,11 @@ class Weather extends StatelessWidget {
              
               TextButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  // Navigate to the WaterQualityInsidePage
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => WeatherQualityInsidePage(stationName: '',)),
+                  );
                 },
                 child: Text(
                   'view more',

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/WaterQualityInsidePage.dart';
 
 class WaterQualityPage extends StatelessWidget {
   final String stationName;
@@ -13,7 +14,6 @@ class WaterQualityPage extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.all(20),
           width: MediaQuery.of(context).size.width * 0.8,
-          
           decoration: BoxDecoration(
             color: Colors.black,
             borderRadius: BorderRadius.circular(20),
@@ -65,7 +65,6 @@ class WaterQualityPage extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    // Example of a simple bar chart. Replace with your custom chart.
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
@@ -121,7 +120,11 @@ class WaterQualityPage extends StatelessWidget {
               SizedBox(height: 20),
               TextButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  // Navigate to the WaterQualityInsidePage
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => WaterQualityInsidePage(stationName: '',)),
+                  );
                 },
                 child: Text(
                   'view more',
@@ -135,3 +138,5 @@ class WaterQualityPage extends StatelessWidget {
     );
   }
 }
+
+
